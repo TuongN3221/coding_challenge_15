@@ -26,7 +26,8 @@ function addRiskItem(riskName, riskLevel, department) {
     resolveButton.addEventListener("click", function(){
         riskContainer.removeChild(card);
     })
-    riskContainer.appendChild(resolveButton)
+    card.appendChild(resolveButton) 
+
 }
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
