@@ -18,6 +18,15 @@ function addRiskItem(riskName, riskLevel, department) {
     `;
     //append to risk card container
     riskContainer.appendChild(card)
+
+    // Task 3 
+    const resolveButton = document.createElement("button");
+    resolveButton.textContent = "Resolve"
+    resolveButton.classList.add("resolve-button")
+    resolveButton.addEventListener("click", function(){
+        riskContainer.removeChild(card);
+    })
+    riskContainer.appendChild(resolveButton)
 }
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
@@ -33,3 +42,6 @@ riskForm.addEventListener('submit', function(event){
     addRiskItem(riskName, riskLevel, riskDepartment)
     riskForm.reset()
 });
+
+// Task 3 test case
+addRiskItem("Market Fluctuations", "High", "Finance");
