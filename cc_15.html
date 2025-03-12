@@ -40,8 +40,8 @@
         <!--Task 1-->
         <div id="riskDashboard"></div>
         <form id="riskForm">
-            <label for="riskDescritpion">Risk Description:</label>
-            <input type="text" id="riskDescritpion" name="riskDescritpion" required>
+            <label for="risk">Risk Description:</label>
+            <input type="text" id="risk" name="risk" required>
 
             <label for="riskLevel">Risk Level:</label>
             <select id="riskLevel" name="riskLevel" required>
@@ -49,6 +49,9 @@
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
+            <label for="riskDepartment">Department:</label>
+            <input type="text" id="riskDepartment" name="riskDepartment" required>
+
             <button type="submit">Add Risk</button>
         </form>
     </main>
