@@ -27,7 +27,17 @@ function addRiskItem(riskName, riskLevel, department) {
         riskContainer.removeChild(card);
     })
     card.appendChild(resolveButton) 
-
+    
+    // Task 4
+    if (riskLevel.toLowerCase() === "low"){
+        card.classList.add("low")
+    }
+    if (riskLevel.toLowerCase() === "medium"){
+        card.classList.add("medium")
+    }
+    if (riskLevel.toLowerCase() === "high"){
+        card.classList.add("high")
+    }
 }
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
@@ -46,3 +56,33 @@ riskForm.addEventListener('submit', function(event){
 
 // Task 3 test case
 addRiskItem("Market Fluctuations", "High", "Finance");
+// Task 4 Test Cases
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+
+//Task 4
+function highlightLow() {
+    const markLow = document.querySelectorAll(".low")
+    Array.from(markLow).forEach(card => {
+        card.style.backgroundColor = "#66ff66";// Green for risk
+        card.style.color = "white";
+    });
+}
+function highlightMedium() {
+    const markMedium = document.querySelectorAll(".medium")
+    Array.from(markMedium).forEach(card => {
+        card.style.backgroundColor = "#eed202";// Yellow for medium
+        card.style.color = "white";
+    });
+}
+function highlightHigh() {
+    const markHigh = document.querySelectorAll(".high")
+    Array.from(markHigh).forEach(card => {
+        card.style.backgroundColor = "#ff6666";// Red for high
+        card.style.color = "white";
+    });
+}
+highlightLow();
+highlightMedium();
+highlightHigh();
+
