@@ -20,15 +20,17 @@ function addRiskItem(riskName, riskLevel, department) {
     riskContainer.appendChild(card)
 
     // Task 3 
+    // Creates the resolve button
     const resolveButton = document.createElement("button");
     resolveButton.textContent = "Resolve"
     resolveButton.classList.add("resolve-button")
     resolveButton.addEventListener("click", function(){
-        riskContainer.removeChild(card);
+        riskContainer.removeChild(card);// Removes the card when button is clicked
     })
     card.appendChild(resolveButton) 
     
     // Task 4
+    //Adds class to card based on risk level for styling
     if (riskLevel.toLowerCase() === "low"){
         card.classList.add("low")
     }
@@ -40,6 +42,7 @@ function addRiskItem(riskName, riskLevel, department) {
     }
 
     // Task 6
+    //Event listener to end remove the card when clicked
     document.querySelector("riskCard").forEach(card =>{
         card.addEventListener("click", function(event){
             event.stopPropagation()
@@ -49,11 +52,13 @@ function addRiskItem(riskName, riskLevel, department) {
 }
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+// Task 2
 // Input new risk in html form
 const riskForm = document.getElementById("riskForm");
 riskForm.addEventListener("submit", function(event){
     event.preventDefault();
 
+    // Gets values to be inputs
     const riskName = document.getElementById("risk").value;
     const riskLevel = document.getElementById("riskLevel").value
     const riskDepartment = document.getElementById("riskDepartment").value
@@ -69,6 +74,7 @@ addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
 
 //Task 4
+//Functions to highlight the text boxes
 function highlightLow() {
     const markLow = document.querySelectorAll(".low")
     Array.from(markLow).forEach(card => {
@@ -95,12 +101,13 @@ highlightMedium();
 highlightHigh();
 
 // Task 5
+// Increases the risk level when button is clicked and dynamically changes the color
 const increaseRiskButton = document.getElementById("increaseRisk"); 
 increaseRiskButton.addEventListener("click", function() {
     const riskCards = document.querySelectorAll(".riskCard");
     riskCards.forEach(card => {
-        const riskLevelElement = card.querySelector("p"); 
-        const currentRiskLevel = riskLevelElement.textContent.split(": ")[1].trim().toLowerCase(); // Extract the risk level text
+        const riskLevelElement = card.querySelector("p"); //Gets the risk level element
+        const currentRiskLevel = riskLevelElement.textContent.split(": ")[1].trim().toLowerCase(); // Extract the current risk level text
 
         let newRiskLevel;
         if (currentRiskLevel === "low") {
