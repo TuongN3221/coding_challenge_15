@@ -38,6 +38,14 @@ function addRiskItem(riskName, riskLevel, department) {
     if (riskLevel.toLowerCase() === "high"){
         card.classList.add("high")
     }
+
+    // Task 6
+    document.querySelector("riskCard").forEach(card =>{
+        card.addEventListener("click", function(event){
+            event.stopPropagation()
+            riskContainer.removeChild(card);
+        });
+    })
 }
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
