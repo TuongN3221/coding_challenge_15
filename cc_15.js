@@ -109,10 +109,10 @@ increaseRiskButton.addEventListener("click", function() {
         const riskLevelElement = card.querySelector("p"); //Gets the risk level element
         const currentRiskLevel = riskLevelElement.textContent.split(": ")[1].trim().toLowerCase(); // Extract the current risk level text
 
-        let newRiskLevel;
+        let newRiskLevel; 
         if (currentRiskLevel === "low") {
             newRiskLevel = 'Medium';
-            card.classList.remove('low');
+            card.classList.remove('low'); 
             card.classList.add('medium');
             card.style.backgroundColor = "#eed202"; // Yellow for medium
         } else if (currentRiskLevel === "medium") {

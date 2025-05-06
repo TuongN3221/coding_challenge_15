@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c5c5c5; /* Central background color */
+}
+header, footer {
+    background-color: #ab5dee; /* Header and footer background color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+main {
+    padding: 20px;
+}
+#riskDashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.riskCard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+.riskCard h3 {
+    margin-top: 0;
+}
+.riskCard p {
+    margin: 5px 0;
+}
+.resolve-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.resolve-button:hover {
+    background-color: #cc0000;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, select, button {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #1da11f;
+}
